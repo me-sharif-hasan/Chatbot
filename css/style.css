@@ -1,0 +1,256 @@
+/* General Page Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.5;
+}
+
+#container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    text-align: center;
+    color: #1a2a3a;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main#content-area {
+    padding: 10px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Breadcrumbs */
+.breadcrumb-nav {
+    padding: 0.75rem 1rem;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #6c757d;
+    content: ">"; /* Or use an SVG icon, etc. */
+}
+
+.breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #495057;
+    font-weight: 500; /* Make active item a bit more prominent */
+}
+
+
+/* Links and Navigation */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.up-link a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #e9ecef;
+    color: #333;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.up-link a:hover {
+    background-color: #d6dce1;
+    text-decoration: none;
+}
+
+/* Directory Listing */
+.directory-listing-header h2, .file-view-header h2 {
+    margin-top: 0;
+    color: #3a4a5a;
+}
+
+ul.file-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li.list-item {
+    padding: 10px 5px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+li.list-item:last-child {
+    border-bottom: none;
+}
+
+li.list-item a {
+    font-weight: 500;
+    color: #2a3a4a;
+}
+li.list-item.dir-item a {
+    /* font-weight: bold; */ /* Optional: if icons are not enough */
+}
+
+li.list-item a:hover {
+    color: #007bff;
+}
+
+.empty-dir-item p, .error-item p {
+    color: #777;
+}
+
+
+/* File Content View */
+.file-view-header {
+    margin-bottom: 15px;
+}
+
+pre {
+    background-color: #282c34; /* Matches atom-one-dark often */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre; /* Ensures preformatting is respected, including horizontal */
+}
+
+pre code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Markdown Content Styling */
+.markdown-content {
+    color: #333;
+    line-height: 1.7;
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3, 
+.markdown-content h4, .markdown-content h5, .markdown-content h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    color: #1a2a3a;
+    font-weight: 600;
+}
+.markdown-content h1 { font-size: 2em; border-bottom: 1px solid #eee; padding-bottom: 0.3em;}
+.markdown-content h2 { font-size: 1.75em; border-bottom: 1px solid #eee; padding-bottom: 0.3em;}
+.markdown-content h3 { font-size: 1.5em; }
+.markdown-content h4 { font-size: 1.25em; }
+
+.markdown-content p {
+    margin-bottom: 1em;
+}
+
+.markdown-content ul, .markdown-content ol {
+    margin-bottom: 1em;
+    padding-left: 30px;
+}
+
+.markdown-content li > p { /* Paragraphs inside list items */
+    margin-bottom: 0.5em;
+}
+
+.markdown-content blockquote {
+    margin: 1em 0;
+    padding: 0.5em 15px;
+    border-left: 4px solid #ccc;
+    background-color: #f8f8f8;
+    color: #555;
+}
+
+.markdown-content code { /* Inline code */
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: #f0f0f0;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.markdown-content pre { /* Code blocks within markdown, if Parsedown generates them */
+    background-color: #f0f0f0; /* Lighter than main code view for distinction if needed */
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.markdown-content pre code {
+    background-color: transparent; /* Reset for code inside pre in markdown */
+    padding: 0;
+    font-size: 0.9em;
+}
+
+.markdown-content table {
+    width: auto;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+}
+
+.markdown-content th, .markdown-content td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.markdown-content th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.markdown-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}

@@ -1,0 +1,29 @@
+# General Settings
+application:
+  name: GitFront Viewer
+  version: "1.1"
+  debug_mode: true
+
+server:
+  host: "0.0.0.0"
+  port: 9000
+  # An example of a commented out line
+  # secret_key: "your-secret-key-here" 
+
+features:
+  markdown_rendering:
+    enabled: true
+    processor: "Parsedown"
+  syntax_highlighting:
+    enabled: true
+    theme: "atom-one-dark"
+    languages:
+      - java
+      - xml
+      - yaml
+      - properties
+      - shell
+
+logging:
+  level: "INFO"
+  file: "/var/log/app.log"
