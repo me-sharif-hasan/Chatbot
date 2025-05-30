@@ -49,7 +49,7 @@
                     } else {
                         $s_cumulativePath .= '/' . $s_segment;
                     }
-                    
+
                     // Check if it's the last segment
                     if ($s_index < count($s_pathSegments) - 1) {
                         echo "<li class=\"breadcrumb-item\"><a href=\"index.php?path=" . urlencode($s_cumulativePath) . "\">" . htmlspecialchars($s_segment) . "</a></li>";
@@ -82,8 +82,8 @@
     // Security: Path Sanitization and Validation
     if ($currentPath === false || strpos($currentPath, $sourceDirReal) !== 0) {
         echo "<p style='color: red;'>Error: Access denied. Invalid path.</p>";
-        $currentPath = $sourceDirReal; 
-        $relativePath = ''; 
+        $currentPath = $sourceDirReal;
+        $relativePath = '';
     }
     // Note: Breadcrumb path ($s_cleanedRelativePathForBreadcrumb) is for display and basic navigation.
     // Main content serving relies on $currentPath and $relativePath which undergo stricter validation.
@@ -144,7 +144,7 @@
          // "Up" link for files - always points to the directory containing the file
         echo "<p class='up-link'><a href='index.php?path=" . urlencode($parentDirRelativePath) . "'>⬆️ Up to /" . htmlspecialchars($parentDirRelativePath) . "</a></p>";
         echo "</div>";
-        
+
         $content = file_get_contents($currentPath);
         if ($content === false) {
             echo "<p class='error-item' style='color: red;'>Error: Could not read file content.</p>";
@@ -155,9 +155,9 @@
             if (in_array($extension, ['md', 'markdown'])) {
                 $Parsedown = new Parsedown();
                 echo "<div class='markdown-content'>";
-                echo $Parsedown->text($content); 
+                echo $Parsedown->text($content);
                 echo "</div>";
-            } elseif (in_array($extension, $textExtensions) || $extension == '') { 
+            } elseif (in_array($extension, $textExtensions) || $extension == '') {
                 $langClass = '';
                 switch ($extension) {
                     case 'java':
@@ -180,7 +180,7 @@
                     default:
                         // For other text files, let highlight.js auto-detect or use no specific class
                         // $langClass = 'language-plaintext'; // Or omit for auto-detection
-                        break; 
+                        break;
                 }
                 echo "<pre><code class=\"" . $langClass . "\">" . htmlspecialchars($content) . "</code></pre>";
             } else {
@@ -200,7 +200,7 @@
     </footer>
 </div> <!-- end container -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="js/script.js"></script> 
+    <script src="js/script.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
